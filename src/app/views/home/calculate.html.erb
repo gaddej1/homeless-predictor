@@ -1,5 +1,25 @@
-<%= link_to 'Back', :back %>
-You entered:
-Monthly necessary expenses: <%= @expenses %>
-Savings: <%= @savings %>
-If you lost your job and you couldn’t find a job for <%= @statement%>, you would become homeless based on your necessary expenses and how much you have saved.
+<div class="vert-form">
+    <div class = "col">
+    </div>
+    
+    <div class = "col">
+        <div class = "row">
+            <p>Monthly necessary expenses: $<%= @expenses %> </p>
+        </div>
+
+        <div class = "row">
+            <p>Savings: $<%= @savings %></p>
+        </div>
+
+        <div class = "row">
+            <p>If you lost your job and you couldn’t find a job for <strong><%= @statement%></strong>, you would become homeless based on your necessary expenses and how much you have saved.</p>
+        </div>
+
+        <div class="row">
+            <%= link_to 'Back', :back, class:"btn btn-light"%>
+        </div>
+    </div>
+
+    <div class = "col">
+    </div>
+</div>
