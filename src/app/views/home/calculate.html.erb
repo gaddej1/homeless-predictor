@@ -3,18 +3,23 @@
     </div>
     
     <div class = "col">
+
+        <!-- Display the value the user inputted earlier for monthly necessary expenses -->
         <div class = "row">
             <p>Monthly necessary expenses: $<%= @expenses %> </p>
         </div>
 
+        <!-- Display the value the user inputted earlier for savings -->
         <div class = "row">
             <p>Savings: $<%= @savings %></p>
         </div>
 
+        <!-- Output the amount of time the user would have before they became homeless if they lost their job -->
         <div class = "row">
             <p>If you lost your job and you couldn’t find a job for <strong><%= @statement%></strong>, you would become homeless based on your necessary expenses and how much you have saved.</p>
         </div>
 
+        <!-- Back Button -->
         <div class="row">
             <%= link_to 'Back', :back, class:"btn btn-light"%>
         </div>

@@ -17,29 +17,23 @@ class HomeController < ApplicationController
   # Also, any local variable made inside this method will also exist
   # in the view to be displayed. Do not look up information within the
   # view itself. Do it here, please!
-
-  # <%= form_for :anything, url: "controllers/home_controller/index" do |form| %>
-  #   <%= form.label :monthly_necessary_expenses %>
-  #   <%= form.number_field :monthly_necessary_expenses, step: :any %>
-  
-  #   <%= form.label :savings %>
-  #   <%= form.number_field :savings, step: :any %>
-  #   <%= form.submit "Submit" %>
-  # <% end  %>
   
   def index
     
   end
 
   def calculate
-    # @request = request.raw_post
+    
+    #Store user input in variables and convert them to floats
     @expenses = params["monthly_necessary_expenses"].to_f
     @savings = params["savings"].to_f
 
+    #Calculate the number of months the user has until they become homeless if they lost their job
     @months = @savings/@expenses
 
     @statement = ""
 
+    #Convert @months to weeks, days, or years according to what makes sense
     if @months < 1
       @weeks = @months * 4
       if @weeks >= 1
