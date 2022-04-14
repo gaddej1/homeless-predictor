@@ -29,8 +29,9 @@ class HomeController < ApplicationController
     @savings = params["savings"].to_f
 
     #Calculate the number of months the user has until they become homeless if they lost their job
+    
     @months = @savings/@expenses
-
+    
     @statement = ""
 
     #Convert @months to weeks, days, or years according to what makes sense
