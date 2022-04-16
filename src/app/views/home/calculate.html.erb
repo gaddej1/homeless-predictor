@@ -24,6 +24,35 @@
             <p>If you lost your job and you couldn’t find a job for <strong><%= @statement%></strong>, you would become homeless based on your necessary expenses and how much you have saved.</p>
         </div>
 
+        <br>
+        
+        <div class = "row">
+            <p>Here is a list of homeless shelters that service your county. Be sure to volunteer or donate!</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>County</th>
+                <th colspan="3"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @homeless_shelters.each do |homeless_shelter| %>
+                    <tr>
+                        <td><%= homeless_shelter.name %></td>
+                        <td><%= homeless_shelter.contact%></td>
+                        <td><%= homeless_shelter.address %></td>
+                        <td><%= homeless_shelter.county%></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
         <!-- Back Button -->
         <div class="row">
             <%= link_to 'Back', :back, class:"btn btn-light"%>

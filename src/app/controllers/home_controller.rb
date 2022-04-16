@@ -31,6 +31,6 @@ class HomeController < ApplicationController
     @county = params["county"]
 
     @statement = generate_statement(@expenses, @savings)
+    @homeless_shelters = HomelessShelter.retrieve_homeless_shelters(@county)
   end
-
 end

@@ -1,7 +1,6 @@
 module CalculateHelper
     def generate_statement(expenses, savings)
         #Calculate the number of months the user has until they become homeless if they lost their job
-    
         months = savings/expenses
         
         statement = ""
