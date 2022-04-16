@@ -38,6 +38,16 @@
         </div>
       </div>
 
+      <!-- County Input Field -->
+      <div class="form-group form-control form-control-lg">
+        <div class = "text-center">
+        <%= label_tag :county%>
+        </div>
+        <div class = "text-center">
+        <%= select_tag(:county, options_for_select(county_options(), params[:county]), class:"select", :prompt => "Select a County", :required => 'required') %>
+        </div>
+      </div>
+
       <!-- Submit Button -->
       <div class="form-group form-control-lg text-center">
         <%= submit_tag "Submit" %>
