@@ -5,30 +5,24 @@
     <div class = "col">
 
         <!-- Display the value the user inputted earlier for monthly necessary expenses -->
-        <div class = "row">
-            <p>Monthly necessary expenses: $<%= @expenses %> </p>
-        </div>
+        <p class = "cent">Monthly necessary expenses: $<%= @expenses %> </p>
 
         <!-- Display the value the user inputted earlier for savings -->
-        <div class = "row">
-            <p>Savings: $<%= @savings %></p>
-        </div>
+        <p class = "cent">Savings: $<%= @savings %></p>
 
         <!-- Display the value the user inputted earlier for county -->
-        <div class = "row">
-            <p>County: <%= @county %></p>
-        </div>
+        <p class = "cent">County: <%= @county %></p>
+
+        <br>
 
         <!-- Output the amount of time the user would have before they became homeless if they lost their job -->
-        <div class = "row">
-            <p>If you lost your job and you couldn’t find a job for <strong><%= @statement%></strong>, you would become homeless based on your necessary expenses and how much you have saved.</p>
-        </div>
+        <p class = "cent">If you lost your job and you couldn’t find a job for <span class = "time"><%= @statement%></span>, you would become homeless based on your necessary expenses and how much you have saved.</p>
 
         <br>
         
-        <div class = "row">
-            <p>Here is a list of homeless shelters that service your county. Be sure to volunteer or donate!</p>
-        </div>
+        
+        <p class = "cent">Here is a list of homeless shelters that service <%= @county %> County. Be sure to volunteer or donate!</p>
+        
 
         <table class="table">
             <thead>

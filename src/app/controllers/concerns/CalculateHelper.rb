@@ -7,35 +7,47 @@ module CalculateHelper
 
         #Convert months to weeks, days, or years according to what makes sense
         if months < 1
-            weeks = months * 4
-            if weeks >= 1
-                if weeks.to_i == 1
-                    statement = weeks.to_i.to_s + " week"
-                else
-                    statement = weeks.to_i.to_s + " weeks"
-                end
-            else
-                days = months * 30
-                if days.to_i == 1
-                    statement = days.to_i.to_s + " day"
-                else
-                    statement = days.to_i.to_s + " days"
-                end
-            end
+            statement = generate_days_or_weeks(months)
         elsif months >= 12
-            years = months / 12
-            if years.to_i == 1
-                statement = years.to_i.to_s + " year"
-            else
-                statement = years.to_i.to_s + " years"
-            end
+            statement = generate_years(months)
         else
-            if months.to_i == 1
-                statement = months.to_i.to_s + " month"
-            else
-                statement = months.to_i.to_s + " months"
-            end
+            statement = generate_months(months)
         end
         return statement
+    end
+
+    def generate_days_or_weeks(months)
+        weeks = months * 4
+        if weeks >= 1
+            if weeks.to_i == 1
+                return weeks.to_i.to_s + " week"
+            else
+                return weeks.to_i.to_s + " weeks"
+            end
+        else
+            days = months * 30
+            if days.to_i == 1
+                return days.to_i.to_s + " day"
+            else
+                return days.to_i.to_s + " days"
+            end
+        end
+    end
+
+    def generate_years(months)
+        years = months / 12
+        if years.to_i == 1
+            return years.to_i.to_s + " year"
+        else
+            return years.to_i.to_s + " years"
+        end
+    end
+
+    def generate_months(months)
+        if months.to_i == 1
+            statement = months.to_i.to_s + " month"
+        else
+            statement = months.to_i.to_s + " months"
+        end
     end
 end

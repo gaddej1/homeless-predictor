@@ -32,5 +32,8 @@ class HomeController < ApplicationController
 
     @statement = generate_statement(@expenses, @savings)
     @homeless_shelters = HomelessShelter.retrieve_homeless_shelters(@county)
+
+    @expenses = '%.2f' % @expenses.to_s
+    @savings = '%.2f' % @savings.to_s
   end
 end
