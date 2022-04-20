@@ -22,6 +22,17 @@ if Rails.env.development?
   admin = User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
   user = User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password')
 
+  csv_text = File.read(Rails.root.join('lib', 'seeds', 'homeless_shelters.csv'))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+  csv.each do |row|
+    t = HomelessShelter.new
+    t.name = row['Name']
+    t.contact = row['Contact']
+    t.address = row['Address']
+    t.county = row['County']
+    t.save!
+  end
+
 elsif Rails.env.production?
 
   # We're in a production application! Stay secure! No accounts with password!
