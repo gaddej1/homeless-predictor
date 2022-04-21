@@ -8,7 +8,7 @@ The UML Diagrams can be found [here](docs/UML_Diagrams.pdf).
 
 The Open Source Maintenance guidelines can be found [here](docs/open_source.md).
 
-# Installation Instructions
+## Installation Instructions
 Navigate to the directory on the VM that you want to clone this repository into. 
 Run the following command:
 
@@ -26,7 +26,7 @@ After these installations have been completed, run the following commands to set
 
 The app is now ready to be run!
 
-# Launching Homeless Predictor
+## Launching Homeless Predictor
 To run the server, you need to know your VM's IP address. You can find this by running this command:
 
     ip addr show eth0
