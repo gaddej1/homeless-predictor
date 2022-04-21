@@ -43,6 +43,7 @@
         <div class = "text-center">
         <%= label_tag :county%>
         </div>
+        <!-- Makes a dropdown with all of the counties in New Jersey. -->
         <div class = "text-center">
         <%= select_tag(:county, options_for_select(county_options(), params[:county]), class:"select", :prompt => "Select a County", :required => 'required') %>
         </div>

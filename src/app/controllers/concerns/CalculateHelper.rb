@@ -1,4 +1,7 @@
 module CalculateHelper
+
+    #This function generates a statement regarding how long the user has until
+    #they would become homeless if they lost their job.
     def generate_statement(expenses, savings)
         #Calculate the number of months the user has until they become homeless if they lost their job
         months = savings/expenses
@@ -16,6 +19,8 @@ module CalculateHelper
         return statement
     end
 
+    #If the amount of time is less than a month, then the amount of time
+    #has to be converted to days or weeks, which is what this function does.
     def generate_days_or_weeks(months)
         weeks = months * 4
         if weeks >= 1
@@ -34,6 +39,9 @@ module CalculateHelper
         end
     end
 
+    #If the amount of time is greater than or equal to 12 months,
+    #then the amount of time has to be converted to years, 
+    #which is what this function does.
     def generate_years(months)
         years = months / 12
         if years.to_i == 1
@@ -43,6 +51,8 @@ module CalculateHelper
         end
     end
 
+    #This function determines if a singular or plural version of month
+    #should be included in the statement depending on the amount of time.
     def generate_months(months)
         if months.to_i == 1
             statement = months.to_i.to_s + " month"

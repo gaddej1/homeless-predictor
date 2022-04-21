@@ -30,9 +30,15 @@ class HomeController < ApplicationController
     @savings = params["savings"].to_f
     @county = params["county"]
 
+    #Calls function that will generate the statement for how long the user can
+    #go before becoming homeless if they lost their job.
     @statement = generate_statement(@expenses, @savings)
+
+    #Calls function that retrieves all of the homeless shelters in a certain county.
     @homeless_shelters = HomelessShelter.retrieve_homeless_shelters(@county)
 
+    #Formats expenses and savings so that they have two places past the decimal point
+    #to make the formatting consistent with how money should be formatted.
     @expenses = '%.2f' % @expenses.to_s
     @savings = '%.2f' % @savings.to_s
   end

@@ -22,6 +22,8 @@ if Rails.env.development?
   admin = User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
   user = User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password')
 
+  #Parses the file that contains the data to initialize the database with
+  #and adds it to the homeless shelters table.
   csv_text = File.read(Rails.root.join('lib', 'seeds', 'homeless_shelters.csv'))
   csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
   csv.each do |row|
