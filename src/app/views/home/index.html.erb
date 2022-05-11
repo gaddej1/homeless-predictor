@@ -24,7 +24,7 @@
         <%= label_tag :monthly_necessary_expenses%>
         </div>
         <div class = "text-center">
-        <%= number_field_tag :monthly_necessary_expenses, params[:monthly_necessary_expenses], min: 0, step: 0.01, :required => 'required'%>    
+        <%= number_field_tag :monthly_necessary_expenses, params[:monthly_necessary_expenses], min: 0.1, step: 0.01, :required => 'required'%>    
         </div>
       </div>
 
@@ -35,6 +35,17 @@
         </div>
         <div class = "text-center">
         <%= number_field_tag :savings, params[:savings], min: 0, step: 0.01, :required => 'required'%>
+        </div>
+      </div>
+
+      <!-- County Input Field -->
+      <div class="form-group form-control form-control-lg">
+        <div class = "text-center">
+        <%= label_tag :county%>
+        </div>
+        <!-- Makes a dropdown with all of the counties in New Jersey. -->
+        <div class = "text-center">
+        <%= select_tag(:county, options_for_select(county_options(), params[:county]), class:"select", :prompt => "Select a County", :required => 'required') %>
         </div>
       </div>
 

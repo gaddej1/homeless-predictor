@@ -5,19 +5,46 @@
     <div class = "col">
 
         <!-- Display the value the user inputted earlier for monthly necessary expenses -->
-        <div class = "row">
-            <p>Monthly necessary expenses: $<%= @expenses %> </p>
-        </div>
+        <p class = "cent">Monthly necessary expenses: $<%= @expenses %> </p>
 
         <!-- Display the value the user inputted earlier for savings -->
-        <div class = "row">
-            <p>Savings: $<%= @savings %></p>
-        </div>
+        <p class = "cent">Savings: $<%= @savings %></p>
+
+        <!-- Display the value the user inputted earlier for county -->
+        <p class = "cent">County: <%= @county %></p>
+
+        <br>
 
         <!-- Output the amount of time the user would have before they became homeless if they lost their job -->
-        <div class = "row">
-            <p>If you lost your job and you couldn’t find a job for <strong><%= @statement%></strong>, you would become homeless based on your necessary expenses and how much you have saved.</p>
-        </div>
+        <p class = "cent">If you lost your job and you couldn’t find a job for <span class = "time"><%= @statement%></span>, you would become homeless based on your necessary expenses and how much you have saved.</p>
+
+        <br>
+        
+        <!-- Outputs all of the homeless shelters in the county -->
+        <p class = "cent">Here is a list of homeless shelters that service <%= @county %> County. Be sure to volunteer or donate!</p>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>County</th>
+                <th colspan="3"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @homeless_shelters.each do |homeless_shelter| %>
+                    <tr>
+                        <td><%= homeless_shelter.name %></td>
+                        <td><%= homeless_shelter.contact%></td>
+                        <td><%= homeless_shelter.address %></td>
+                        <td><%= homeless_shelter.county%></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
 
         <!-- Back Button -->
         <div class="row">
