@@ -19,6 +19,11 @@
         <p class = "cent">If you lost your job and you couldn’t find a job for <span class = "time"><%= @statement%></span>, you would become homeless based on your necessary expenses and how much you have saved.</p>
 
         <br>
+
+        <% if @risk %>
+            <p class = "cent">You are at <span class = "risk">high risk</span> of becoming homeless. Since losing your job would put you at risk of becoming homeless in a short amount of time, it would be prudent to reduce your monthly necessary expenses and increase your savings.</p>
+            <br>
+        <% end %>
         
         <!-- Outputs all of the homeless shelters in the county -->
         <p class = "cent">Here is a list of homeless shelters that service <%= @county %> County. Be sure to volunteer or donate!</p>

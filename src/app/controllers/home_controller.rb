@@ -33,6 +33,7 @@ class HomeController < ApplicationController
     #Calls function that will generate the statement for how long the user can
     #go before becoming homeless if they lost their job.
     @statement = generate_statement(@expenses, @savings)
+    @risk = check_high_risk(@expenses, @savings)
 
     #Calls function that retrieves all of the homeless shelters in a certain county.
     @homeless_shelters = HomelessShelter.retrieve_homeless_shelters(@county)
