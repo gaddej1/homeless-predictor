@@ -60,4 +60,12 @@ module CalculateHelper
             statement = months.to_i.to_s + " months"
         end
     end
+
+    def check_high_risk(expenses, savings)
+        months = savings/expenses
+        if months < 2
+            return true
+        end
+        return false
+    end
 end
